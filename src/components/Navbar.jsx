@@ -40,9 +40,9 @@ const Navbar = () => {
         <div className="flex p-2 gap-1 mx-2">
           <img
             // src="../public/expenseLogo.png"
-            src="https://img.freepik.com/premium-vector/wallet-arrow-logo_48832-5380.jpg?ga=GA1.1.1655646369.1743330572&semt=ais_hybrid&w=740"
+            src="https://img.freepik.com/free-vector/gradient-accounting-logo-template_23-2148846306.jpg?t=st=1743701278~exp=1743704878~hmac=6d2fdfa27ab67c99f81a545cf406347a64b7b2bced0749837ccc298b501f9517&w=826"
             alt=""
-            className="w-[27px] h-[27px] "
+            className="w-[30px] h-[30px] rounded-full"
           />
           <p className=" text-xl font-serif uppercase opacity-70">
             Cash<span className="text-green-300 ">Flow</span>
