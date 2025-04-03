@@ -39,7 +39,8 @@ const Navbar = () => {
       <div className="w-100% bg-slate-500 h-[55px] text-white flex justify-between items-center ">
         <div className="flex p-2 gap-1 mx-2">
           <img
-            src="../public/expenseLogo.png"
+            // src="../public/expenseLogo.png"
+            src="https://img.freepik.com/free-vector/hand-drawn-money-logo-design_23-2150931754.jpg?t=st=1743699875~exp=1743703475~hmac=67102888923382ce06ff54a81081d13612bd45e2826769efb743876372636db0&w=826"
             alt=""
             className="w-[27px] h-[27px] "
           />
