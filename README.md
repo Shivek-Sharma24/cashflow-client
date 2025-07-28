@@ -1,4 +1,4 @@
-# 💸 MERN Stack Expense Tracker
+# MERN Stack Expense Tracker
 
 A full-featured Expense Tracker built with the **MERN stack** (MongoDB, Express.js, React, Node.js). It includes **JWT-based authentication**, CRUD operations for expenses, and a responsive UI. The frontend is deployed on **Vercel**.
 
