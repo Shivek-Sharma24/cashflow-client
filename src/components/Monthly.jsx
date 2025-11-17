@@ -66,4 +66,4 @@ const MonthlyExpense = () => {
   );
 };
 
-export default MonthlyExpense;
+export default React.memo(MonthlyExpense);

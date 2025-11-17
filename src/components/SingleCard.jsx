@@ -70,4 +70,4 @@ const SingleCard = ({ item, fetchExpenses, setcatvalue }) => {
   );
 };
 
-export default SingleCard;
+export default React.memo(SingleCard);

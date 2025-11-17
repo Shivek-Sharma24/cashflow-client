@@ -83,4 +83,4 @@ const Totalexpense = ({ catvalue, setcatvalue }) => {
   );
 };
 
-export default Totalexpense;
+export default React.memo(Totalexpense);

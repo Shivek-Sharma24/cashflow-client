@@ -143,4 +143,4 @@ const ExpenseTracker = () => {
   );
 };
 
-export default ExpenseTracker;
+export default React.memo(ExpenseTracker);

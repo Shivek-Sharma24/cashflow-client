@@ -8,6 +8,7 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 import { Navigate } from "react-router-dom";
 import NotFound from "./components/Notfound";
+import React from "react";
 
 function App() {
   let token = localStorage.getItem("token");
@@ -49,4 +50,4 @@ function App() {
   );
 }
 
-export default App;
+export default React.memo(App);

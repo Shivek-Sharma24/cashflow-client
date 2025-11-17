@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const NotFound = () => {
@@ -11,4 +11,4 @@ const NotFound = () => {
   return <div>This Page is not found...</div>;
 };
 
-export default NotFound;
+export default React.memo(NotFound);
