@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 
 const Signup = () => {
   const navigate = useNavigate();
+  const [requestSent , SetrequestSent] = useState(false)
   const [formdata, setformdata] = useState({
     username: "",
     email: "",
@@ -23,8 +24,9 @@ const Signup = () => {
       return;
     }
 
-    console.log(formdata);
+    // console.log(formdata);
     try {
+      SetrequestSent(true)
       let res = await axios.post(
         "https://cash-flow-server.vercel.app/create",
         formdata
@@ -40,6 +42,8 @@ const Signup = () => {
       console.log("Signup error", error);
     }
     setformdata({ username: "", email: "", password: "" });
+    SetrequestSent(false)
+
   }
 
   let token = localStorage.getItem("token");
@@ -89,8 +93,9 @@ const Signup = () => {
               className="block border-2 rounded-full text-center mx-auto mt-4 w-[70%] px-3 py-2 sm:py-1.5 bg-red-600 text-white font-semibold cursor-pointer transition hover:bg-red-700"
               type="submit"
               onClick={handleSubmit}
+              disabled={requestSent}
             >
-              Register Your Account
+              {!requestSent ? "Register Your Account" : "Loading"}
             </button>
 
             <p className="mt-4 text-zinc-600 w-[70%] mx-auto font-semibold text-center text-sm sm:text-xs">

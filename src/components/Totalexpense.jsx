@@ -32,7 +32,7 @@ const Totalexpense = ({ catvalue, setcatvalue }) => {
           },
         }
       );
-      console.log(response.data);
+      // console.log(response.data);
       if (response.data === "Empty expenses") {
         navigate("/addExpense");
       } else {

@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 
 const Login = () => {
   const navigate = useNavigate();
-
+  const [requestSent , SetrequestSent] = useState(false)
   const [Logindata, setLogindata] = useState({
     email: " ",
     password: "",
@@ -21,17 +21,19 @@ const Login = () => {
       toast.error("All fields are required!");
       return;
     }
-
-    console.log(Logindata);
+    console.log("button clicked")
+    // console.log(Logindata);
     try {
+      SetrequestSent(true)
       let res = await axios.post(
         "https://cash-flow-server.vercel.app/login",
         Logindata
       );
+
       // console.log(res.data.token);
       localStorage.setItem("token", res.data.token);
       toast.success(`${res.data.message}, wait a sec :)`);
-
+     
       setTimeout(() => {
         window.location.reload("/");
       }, 1000);
@@ -40,6 +42,7 @@ const Login = () => {
       console.log("login error", error);
     }
     setLogindata({ email: "", password: "" });
+    SetrequestSent(false)
   }
   let token = localStorage.getItem("token");
   useEffect(() => {
@@ -82,8 +85,9 @@ const Login = () => {
               className="block border-2 rounded-full text-center mx-auto mt-4 w-[70%] px-3 py-2 sm:py-1.5 bg-red-600 text-white font-semibold cursor-pointer transition hover:bg-red-700"
               type="submit"
               onClick={handleSubmit}
+              disabled={requestSent}
             >
-              Login Your Account
+             {!requestSent? "Login Your Account" : "Loading"}
             </button>
 
             <p className="mt-4 text-zinc-600 w-[70%] mx-auto font-semibold text-center text-sm sm:text-xs">
@@ -103,4 +107,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default React.memo(Login);
