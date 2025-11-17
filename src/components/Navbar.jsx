@@ -5,8 +5,9 @@ import toast from "react-hot-toast";
 
 const Navbar = () => {
   const [username, setusername] = useState("");
+  const [loading , setloading] = useState(false)
   let token = localStorage.getItem("token");
-
+  
   async function fetch() {
     try {
       let res = await axios.get(
@@ -27,10 +28,12 @@ const Navbar = () => {
   fetch();
 
   function handleLogout() {
+    setloading(true)
     localStorage.clear();
     toast.success("Logout Successfully! , wait a sec...");
     setTimeout(() => {
       window.location.assign("/");
+      setloading(false)
     }, 2000);
   }
 
@@ -56,6 +59,7 @@ const Navbar = () => {
             <button
               className="w-[60px] h-[35px] p-1 rounded-md text-white text-center bg-red-600 text-sm m-4 text-opacity-90 hover:bg-red-500"
               onClick={handleLogout}
+              disabled={loading}
             >
               Logout
             </button>
